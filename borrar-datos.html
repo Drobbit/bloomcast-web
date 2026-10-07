@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>Borrar tus datos de Bloomcast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap">
+<style>
+  /* Una sola columna legible, como un documento; la tabla de datos es lo único con estructura propia */
+  :root {
+    --fondo: #F4F7F3;
+    --papel: #FFFFFF;
+    --tinta: #17261C;
+    --suave: #4F6155;
+    --linea: #DCE6DE;
+    --verde: #1F6B45;
+    --verde-claro: #E2EEE3;
+    --letra: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --fondo: #0F1712; --papel: #17221B; --tinta: #E6EEE7; --suave: #A3B5A8;
+      --linea: #2A3A2F; --verde: #7BC47F; --verde-claro: #1E3326; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --fondo: #0F1712; --papel: #17221B; --tinta: #E6EEE7; --suave: #A3B5A8;
+    --linea: #2A3A2F; --verde: #7BC47F; --verde-claro: #1E3326; color-scheme: dark;
+  }
+  body { background: var(--fondo); color: var(--tinta); font-family: var(--letra); font-size: 16px; line-height: 1.65; padding: 0 16px; }
+  main { max-width: 680px; margin: 0 auto; padding-block: 40px 64px; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; align-items: center; gap: 16px; }
+  .sello { width: 56px; height: 56px; border-radius: 16px; flex-shrink: 0; }
+  h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.15; margin: 0; text-wrap: balance; }
+  .fecha { color: var(--suave); font-size: 14px; margin: 2px 0 0; }
+  h2 { font-size: 19px; font-weight: 800; margin: 0 0 6px; text-wrap: balance; }
+  section { display: flex; flex-direction: column; gap: 8px; }
+  p, ul { margin: 0; }
+  ul { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  a { color: var(--verde); font-weight: 600; }
+  a:focus-visible { outline: 2px solid var(--verde); outline-offset: 2px; border-radius: 4px; }
+  .resumen { background: var(--verde-claro); border-radius: 18px; padding: 18px 20px; }
+  .resumen strong { color: var(--verde); }
+  .tabla { overflow-x: auto; border: 1px solid var(--linea); border-radius: 14px; background: var(--papel); }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 14px; line-height: 1.5; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--linea); }
+  tr:last-child td { border-bottom: 0; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--suave); font-weight: 600; }
+  .pendiente { background: #FFF4D6; color: #7A4A00; border-radius: 6px; padding: 0 6px; font-weight: 600; }
+  hr { border: 0; border-top: 1px solid var(--linea); margin: 8px 0; width: 100%; }
+  .en { color: var(--suave); }
+  .en h2 { color: var(--tinta); }
+</style>
+
+<main>
+  <p><a href="index.html">← Bloomcast</a></p>
+  <header>
+    <img class="sello" src="data:image/png;base64,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" alt="" width="56" height="56">
+    <div>
+      <h1>Cómo borrar tus datos de Bloomcast</h1>
+      <p class="fecha">Bloomcast: cuidado de plantas · desarrollada por Norman Espejo Marty</p>
+    </div>
+  </header>
+
+  <p class="resumen"><strong>En resumen:</strong> Bloomcast no tiene cuentas ni servidores propios. Todos tus datos están guardados solo en tu móvil, así que puedes borrarlos tú mismo en cualquier momento, sin tener que pedírselo a nadie.</p>
+
+  <section>
+    <h2>Borrar una planta</h2>
+    <ul>
+      <li>En «Mis plantas», toca la planta y pulsa <strong>Editar</strong>.</li>
+      <li>Abajo del todo, pulsa <strong>Borrar planta</strong> y confirma.</li>
+      <li>Se borran la planta, su historial de riegos y abonos, sus notas y sus fotos del diario.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Borrar una foto o una nota del diario</h2>
+    <ul>
+      <li>Abre la planta y mantén pulsada la nota o la foto que quieras quitar. Confirma con <strong>Borrar</strong>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Borrarlo todo</h2>
+    <ul>
+      <li>Desinstala Bloomcast del móvil. Se borran todos los datos de la app: plantas, diario, fotos, ajustes y avisos programados.</li>
+      <li>Si hiciste copias de seguridad, son archivos que guardaste tú (por ejemplo, en tu Google Drive). Bórralos desde donde los guardaste.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Datos que salen del móvil</h2>
+    <ul>
+      <li><strong>Ubicación aproximada:</strong> se envía a Open-Meteo solo para consultar el tiempo. Bloomcast no la guarda en ningún servidor.</li>
+      <li><strong>Fotos para identificar plantas:</strong> se envía una copia reducida a Pl@ntNet, que la trata según <a href="https://plantnet.org/en/terms-of-use/" target="_blank" rel="noopener">sus condiciones</a>. Bloomcast no la guarda.</li>
+      <li>Bloomcast no conserva ningún dato tuyo en servidores propios, así que no hay periodos de retención adicionales.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>¿Dudas?</h2>
+    <p>Escribe a <a href="mailto:drobbit@gmail.com">drobbit@gmail.com</a> y te ayudaremos. Más detalles en la <a href="privacidad.html">política de privacidad</a>.</p>
+  </section>
+
+  <hr>
+
+  <section class="en" lang="en">
+    <h2>How to delete your Bloomcast data</h2>
+    <p>Bloomcast (Plant Care &amp; Water, by Norman Espejo Marty) has no accounts and no servers of its own: all your data is stored only on your phone. To delete a plant with its watering history, notes and diary photos, open the plant, tap <strong>Edit</strong> and then <strong>Delete plant</strong>. To delete a single photo or note, long-press it in the plant's diary. To delete everything, uninstall the app. Backups are files you saved yourself; delete them wherever you stored them. Your approximate location (sent to Open-Meteo for the forecast) and identification photos (sent to Pl@ntNet) are not kept by Bloomcast, so there are no additional retention periods. Questions: <a href="mailto:drobbit@gmail.com">drobbit@gmail.com</a>.</p>
+  </section>
+</main>
+
+</body>
+</html>
